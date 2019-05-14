@@ -1,18 +1,22 @@
 var currentIndex = 0;
 var currentRow = 0;
 
+window.onload = function() {
+  document.getElementById("id").focus();
+};
+
 function handleKeyDown(evt) {
   switch (evt.key) {
     case 'SoftLeft':
       break;
 
     case 'SoftRight':
+       document.activeElement.value = "";
       break;
 
     case 'Enter':
     currentRow=0;
     currentIndex=0;
-      document.getElementById("id").focus();
       break;
 
     case 'ArrowUp':

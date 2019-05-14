@@ -28,6 +28,36 @@ input:focus {
 input:disabled {
   background-color: #EEEEEE;
 }
+.btn-group button {
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  font-size: 10px;
+  margin-right: 5px;
+  margin-left: 20px;
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+#btn1 {
+  width:27%;
+  background-color:#ffca28;
+  border: 1px solid yellow;
+}
+
+#btn2 {
+  width:20%;
+  background-color:#8bc34a;
+  border: 1px solid green;
+}
+
+#btn3 {
+  width:20%;
+  background-color:#bf360c;
+  border: 1px solid red;
+}
 
 #cell-0, #cell-1, #cell-2 {
   border-top: 2px solid #000000;
