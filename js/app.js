@@ -1,4 +1,5 @@
 var currentIndex = 0;
+var currentRow = 0;
 
 function handleKeyDown(evt) {
   switch (evt.key) {
@@ -13,11 +14,11 @@ function handleKeyDown(evt) {
       break;
 
     case 'ArrowUp':
-      navvert(-10);
+      navvert(-1);
       break;
 
     case 'ArrowDown':
-      navvert(10);
+      navvert(1);
       break;
 
     case 'ArrowRight':
@@ -37,19 +38,24 @@ function handleKeyDown(evt) {
 function navside (move) {
   console.log("horizontal");
   console.log(move);
+  var rows=document.querySelectorAll('.vert');
+  var targetRow= rows[currentRow];
   var next = currentIndex + move;
-  var item = document.querySelectorAll('.item');
+  var item = targetRow.querySelectorAll('.item');
   var targetElement = item[next];
   targetElement.focus();
   currentIndex = next;
 }
 function navvert (move) {
-  console.log("vertical");
-  console.log(move);
-  var next = currentIndex + move;
-  var item = document.querySelectorAll('.vert');
-  var targetElement = item[next];
+  console.log("CurrentRow:"+currentRow);
+  var nextRow= move+currentRow;
+  console.log("NextRow:"+nextRow);
+  var rows = document.querySelectorAll('.vert');
+  var targetRow = rows[nextRow];
+  var items = targetRow.querySelectorAll('.item');
+  console.log(items);
+  var targetElement = items[currentIndex];
   targetElement.focus();
-  currentIndex = next;
+  currentRow=nextRow;
 }
 document.activeElement.addEventListener('keydown', handleKeyDown);
