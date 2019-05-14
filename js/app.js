@@ -12,7 +12,6 @@ function handleKeyDown(evt) {
     case 'Enter':
     currentRow=0;
     currentIndex=0;
-      document.getElementById("id").focus();
       break;
 
     case 'ArrowUp':
