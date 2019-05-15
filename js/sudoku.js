@@ -36,6 +36,7 @@ function clearBoard() {
   for (var i = 1; i <= 81; i++) {
     console.log("cleared");
     document.getElementById('c' + i).style.backgroundColor = "white";
+    document.getElementById('c' + i).disabled = false;
     document.getElementById('c' + i).value = " ";
   }
 }
@@ -236,6 +237,9 @@ function fillBoardwithClues() {
   }
   for (var i = 1; i <= 81; i++) {
     document.getElementById('c' + i).value = sudokuCopy[i - 1];
+    if(sudokuCopy[i-1]!=""){
+      document.getElementById('c' + i).disabled = true;
+    }
   }
 }
 

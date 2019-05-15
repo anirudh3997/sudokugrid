@@ -5,8 +5,6 @@ window.onload = function() {
   document.getElementById("c1").focus();
 };
 
-
-
 function handleKeyDown(evt) {
   isSolvedSudoku(sudoku);
   switch (evt.key) {

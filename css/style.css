@@ -18,15 +18,14 @@ input {
   height: 24px;
   font-size: 12px;
   background-color: #FFFFFF;
-  outline: none;
 }
 
 input:focus {
-  background-color: yellow;
+  background-color: yellow !important;
 }
 
 input:disabled {
-  background-color: #EEEEEE;
+  background-color: #e0e0e0 !important;
 }
 .btn-group button {
   border: 1px solid green; /* Green border */
