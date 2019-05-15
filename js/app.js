@@ -1,12 +1,7 @@
 var currentIndex = 0;
 var currentRow = 0;
 
-window.onload = function() {
-  document.getElementById("c1").focus();
-};
-
 function handleKeyDown(evt) {
-  isSolvedSudoku(sudoku);
   switch (evt.key) {
     case 'SoftLeft':
       document.getElementById('btn1').click();

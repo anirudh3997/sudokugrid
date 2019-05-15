@@ -11,7 +11,8 @@ td {
 }
 
 input {
-  color: #000000;
+  color: transparent;
+  text-shadow: 0 0 0 #000000;
   border: 0;
   text-align: center;
   width: 24px;
@@ -19,7 +20,7 @@ input {
   font-size: 12px;
   background-color: #FFFFFF;
   &:focus {
-     outline: none;
+     outline: none !important;
  }
 }
 
@@ -30,6 +31,11 @@ input:focus {
 input:disabled {
   background-color: #e0e0e0 !important;
 }
+
+/* input:readOnly {
+  background-color: #e0e0e0 !important;
+} */
+
 .btn-group button {
   border: 1px solid green; /* Green border */
   color: white; /* White text */
