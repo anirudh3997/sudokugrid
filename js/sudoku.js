@@ -17,6 +17,11 @@ function returnRow(cell) {
   return Math.floor(cell / 9);
 }
 
+function newGame(){
+  sudoku = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+  solve(sudoku);
+}
+
 // given a sudoku cell, returns the column
 function returnCol(cell) {
   return cell % 9;
@@ -168,6 +173,7 @@ function nextRandom(possible) {
 
 // given a sudoku, solves it
 function solve(sudoku) {
+  console.log("called");
   var saved = new Array();
   var savedSudoku = new Array();
   var i = 0;
@@ -206,8 +212,8 @@ function fillBoardwithClues(){
     sudokuCopy[random[i]]="";
   }
   for (var i = 1; i <= 81; i++) {
-    console.log("SudokuCopy Called");
-    document.getElementById('c'+i).value = sudokuCopy[i-1];
+    if(sudokuCopy[i-1]!=0)
+        document.getElementById('c'+i).value = sudokuCopy[i-1];
   }
 }
 
