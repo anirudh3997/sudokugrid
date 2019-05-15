@@ -24,7 +24,7 @@ input {
 }
 
 input:focus {
-  background-color: yellow !important;
+  border-color: #d4e157 !important;
 }
 
 input:disabled {

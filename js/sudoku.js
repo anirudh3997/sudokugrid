@@ -238,7 +238,8 @@ function fillBoardwithClues() {
   for (var i = 1; i <= 81; i++) {
     document.getElementById('c' + i).value = sudokuCopy[i - 1];
     if(sudokuCopy[i-1]!=""){
-      document.getElementById('c' + i).disabled = true;
+      document.getElementById('c' + i).readOnly = true;
+    
     }
   }
 }

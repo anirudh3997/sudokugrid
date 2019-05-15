@@ -79,7 +79,13 @@ function navside (move) {
   var next = currentIndex + move;
   var item = targetRow.querySelectorAll('.item');
   var targetElement = item[next];
-  targetElement.focus();
+  var previousElement = item[currentIndex];
+  targetElement.style.backgroundColor="#ffe0b2";
+  if(!targetElement.readOnly){
+    targetElement.focus();
+  }
+  previousElement.style.backgroundColor="transparent";
+  previousElement.blur();
   currentIndex = next;
 }
 function navvert (move) {
