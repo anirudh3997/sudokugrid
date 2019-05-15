@@ -2,6 +2,7 @@ var clues, sudoku, randomindex, sudokuCopy, random;
 
 window.onload = function() {
   console.log("New Game Called");
+  document.getElementById("c1").backgroundColor="#ffe0b2";
   newGame();
 };
 
@@ -30,6 +31,7 @@ function newGame() {
   generate();
   console.log(sudoku);
   fillBoardwithClues();
+  document.getElementById("c1").focus();
 }
 //This function when called clears the board
 function clearBoard() {
@@ -222,10 +224,19 @@ function solve(sudoku) {
 
 function fillBoard() {
   for (var i = 1; i <= 81; i++) {
-    if (document.getElementById('c' + i).value == "") {
+    if (document.getElementById('c' + i).disabled == false) {
       console.log("called fillBoard");
-      document.getElementById('c' + i).style.backgroundColor = "green";
-      document.getElementById('c' + i).value = sudoku[i - 1];
+      if (document.getElementById('c' + i).value == "") {
+        document.getElementById('c' + i).style.backgroundColor = "#dce775";
+        document.getElementById('c' + i).value = sudoku[i - 1];
+      }
+      else if (document.getElementById('c' + i).value != sudoku[i - 1]) {
+        document.getElementById('c' + i).style.backgroundColor = "#e57373";
+        document.getElementById('c' + i).value = sudoku[i - 1];
+      }
+      else {
+        document.getElementById('c' + i).style.backgroundColor = "#76ff03";
+      }
     }
   }
 }
@@ -236,10 +247,10 @@ function fillBoardwithClues() {
     sudokuCopy[random[i]] = "";
   }
   for (var i = 1; i <= 81; i++) {
-    document.getElementById('c' + i).value = sudokuCopy[i - 1];
+    document.getElementById('c' + i).value= sudokuCopy[i - 1];
     if(sudokuCopy[i-1]!=""){
       document.getElementById('c' + i).readOnly = true;
-    
+
     }
   }
 }

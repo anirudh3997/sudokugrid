@@ -1,12 +1,7 @@
 var currentIndex = 0;
 var currentRow = 0;
 
-window.onload = function() {
-  document.getElementById("c1").focus();
-};
-
 function handleKeyDown(evt) {
-  isSolvedSudoku(sudoku);
   switch (evt.key) {
     case 'SoftLeft':
       document.getElementById('btn1').click();
@@ -91,10 +86,18 @@ function navside (move) {
 function navvert (move) {
   var nextRow= move+currentRow;
   var rows = document.querySelectorAll('.vert');
+  var previousRow=rows[currentRow];
+  var previousElements= previousRow.querySelectorAll('.item');
+  var previousElement = previousElements[currentIndex];
   var targetRow = rows[nextRow];
   var items = targetRow.querySelectorAll('.item');
   var targetElement = items[currentIndex];
+  targetElement.style.backgroundColor="#ffe0b2";
+  if(!targetElement.readOnly){
   targetElement.focus();
+}
+previousElement.style.backgroundColor="transparent";
+previousElement.blur();
   currentRow=nextRow;
 }
 document.activeElement.addEventListener('keydown', handleKeyDown);
