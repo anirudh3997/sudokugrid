@@ -19,13 +19,11 @@ input {
   height: 24px;
   font-size: 12px;
   background-color: #FFFFFF;
-  &:focus {
-     outline: none !important;
- }
+
 }
 
 input:focus {
-  border-color: #ffe0b2 !important;
+  background-color: #ffe0b2 !important;
 }
 
 input:disabled {

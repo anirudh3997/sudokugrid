@@ -2,7 +2,7 @@ var clues, sudoku, randomindex, sudokuCopy, random;
 
 window.onload = function() {
   console.log("New Game Called");
-  document.getElementById("c1").backgroundColor="#ffe0b2";
+  // document.getElementById("c1").backgroundColor="#ffe0b2";
   newGame();
 };
 
@@ -31,7 +31,12 @@ function newGame() {
   generate();
   console.log(sudoku);
   fillBoardwithClues();
-  document.getElementById("c1").focus();
+  var firstElement=document.getElementById("c1");
+  firstElement.style.backgroundColor="#ffe0b2";
+  if(!firstElement.readOnly){
+  firstElement.focus();
+}
+
 }
 //This function when called clears the board
 function clearBoard() {
