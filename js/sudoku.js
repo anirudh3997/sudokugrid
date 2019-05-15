@@ -1,34 +1,44 @@
-var clues = Math.floor(Math.random()*47)+17;
-// we start with an empty sudoku...
+var clues, sudoku, randomindex, sudokuCopy, random;
 
-var sudoku = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-var randomindex = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80];
-// ... and we solve it!!
-// solve(sudoku);
-// var sudokuCopy= sudoku;
-function newGame(){
-  var clues = Math.floor(Math.random()*47)+17;
-  // we start with an empty sudoku...
-  var sudoku = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-  var randomindex = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80];
-console.log("new Game");
-}
-function shuffle(o) {
-for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-return o;
+window.onload = function() {
+  console.log("New Game Called");
+  newGame();
 };
-var random = shuffle(randomindex);
-console.log("Random:" +random[10]);
+
+//This function is for generating a board and its elements
+function generate() {
+  clues = Math.floor(Math.random() * 47) + 17;
+  sudoku = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+  randomindex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80];
+  solve(sudoku);
+  sudokuCopy = Array.from(sudoku);
+  random = shuffle(randomindex);
+}
+//This function shuffles an array to simulate random number generation without repetition
+function shuffle(o) {
+  for (var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+  return o;
+};
+
 // given a sudoku cell, returns the row
 function returnRow(cell) {
   return Math.floor(cell / 9);
 }
-
-function newGame(){
-  sudoku = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-  solve(sudoku);
+//This function generates a new game board with random new numbers
+function newGame() {
+  clearBoard();
+  generate();
+  console.log(sudoku);
+  fillBoardwithClues();
 }
-
+//This function when called clears the board
+function clearBoard() {
+  for (var i = 1; i <= 81; i++) {
+    console.log("cleared");
+    document.getElementById('c' + i).style.backgroundColor = "white";
+    document.getElementById('c' + i).value = " ";
+  }
+}
 // given a sudoku cell, returns the column
 function returnCol(cell) {
   return cell % 9;
@@ -112,6 +122,7 @@ function isCorrectBlock(block, sudoku) {
 
 // given a sudoku, returns true if the sudoku is solved
 function isSolvedSudoku(sudoku) {
+  console.log("is");
   for (var i = 0; i <= 8; i++) {
     if (!isCorrectBlock(i, sudoku) || !isCorrectRow(i, sudoku) || !isCorrectCol(i, sudoku)) {
       return false;
@@ -210,26 +221,21 @@ function solve(sudoku) {
 
 function fillBoard() {
   for (var i = 1; i <= 81; i++) {
-    console.log("called");
-    document.getElementById('c'+i).value = sudoku[i-1];
+    if (document.getElementById('c' + i).value == "") {
+      console.log("called fillBoard");
+      document.getElementById('c' + i).style.backgroundColor = "red";
+      document.getElementById('c' + i).value = sudoku[i - 1];
+    }
   }
 }
 
-function fillBoardwithClues(){
-  newGame();
-  solve(sudoku);
-  console.log(sudoku.includes(0));
-  if(sudoku.includes(0)){
-    console.log(isSolvedSudoku(sudoku));
-  }
-  sudokuCopy=Array.from(sudoku);
-  console.log(sudoku);
+function fillBoardwithClues() {
+  console.log("called fill");
   for (var i = 0; i < clues; i++) {
-    sudokuCopy[random[i]]="";
+    sudokuCopy[random[i]] = "";
   }
   for (var i = 1; i <= 81; i++) {
-    if(sudokuCopy[i-1]!=0)
-        document.getElementById('c'+i).value = sudokuCopy[i-1];
+    document.getElementById('c' + i).value = sudokuCopy[i - 1];
   }
 }
 

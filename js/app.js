@@ -5,7 +5,10 @@ window.onload = function() {
   document.getElementById("c1").focus();
 };
 
+
+
 function handleKeyDown(evt) {
+  isSolvedSudoku(sudoku);
   switch (evt.key) {
     case 'SoftLeft':
       document.getElementById('btn1').click();
@@ -16,7 +19,7 @@ function handleKeyDown(evt) {
       break;
 
     case 'Enter':
-    document.getElementById('btn2').click();
+      document.getElementById("btn2").click();
       break;
 
     case 'ArrowUp':
