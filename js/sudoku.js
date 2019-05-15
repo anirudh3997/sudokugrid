@@ -183,11 +183,12 @@ function solve(sudoku) {
     sudoku[whatToTry] = attempt;
   }
 
-  showSudoku(sudoku);
+  // showSudoku(sudoku);
 }
 
 function fillBoard() {
   for (var i = 1; i <= 81; i++) {
+    console.log("called");
     document.getElementById('c'+i).value = sudoku[i-1];
   }
 }
