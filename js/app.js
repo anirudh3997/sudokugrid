@@ -16,8 +16,6 @@ function handleKeyDown(evt) {
       break;
 
     case 'Enter':
-    currentRow=0;
-    currentIndex=0;
       break;
 
     case 'ArrowUp':

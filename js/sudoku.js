@@ -1,9 +1,17 @@
+var clues = Math.floor(Math.random()*47)+17;
 // we start with an empty sudoku...
 var sudoku = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-
+var randomindex = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80];
 // ... and we solve it!!
 solve(sudoku);
+var sudokuCopy= sudoku;
 
+function shuffle(o) {
+for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+return o;
+};
+var random = shuffle(randomindex);
+console.log("Random:" +random[10]);
 // given a sudoku cell, returns the row
 function returnRow(cell) {
   return Math.floor(cell / 9);
@@ -190,6 +198,16 @@ function fillBoard() {
   for (var i = 1; i <= 81; i++) {
     console.log("called");
     document.getElementById('c'+i).value = sudoku[i-1];
+  }
+}
+
+function fillBoardwithClues(){
+  for (var i = 0; i < clues; i++) {
+    sudokuCopy[random[i]]="";
+  }
+  for (var i = 1; i <= 81; i++) {
+    console.log("SudokuCopy Called");
+    document.getElementById('c'+i).value = sudokuCopy[i-1];
   }
 }
 
