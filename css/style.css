@@ -18,6 +18,9 @@ input {
   height: 24px;
   font-size: 12px;
   background-color: #FFFFFF;
+  &:focus {
+     outline: none;
+ }
 }
 
 input:focus {
