@@ -224,7 +224,7 @@ function fillBoard() {
   for (var i = 1; i <= 81; i++) {
     if (document.getElementById('c' + i).value == "") {
       console.log("called fillBoard");
-      document.getElementById('c' + i).style.backgroundColor = "red";
+      document.getElementById('c' + i).style.backgroundColor = "green";
       document.getElementById('c' + i).value = sudoku[i - 1];
     }
   }
