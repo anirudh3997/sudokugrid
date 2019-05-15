@@ -16,6 +16,7 @@ function handleKeyDown(evt) {
       break;
 
     case 'Enter':
+    document.getElementById('btn2').click();
       break;
 
     case 'ArrowUp':
