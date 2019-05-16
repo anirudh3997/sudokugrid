@@ -27,6 +27,7 @@ function returnRow(cell) {
 }
 //This function generates a new game board with random new numbers
 function newGame() {
+  enableButtons();
   clearBoard();
   generate();
   console.log(sudoku);
@@ -229,6 +230,9 @@ function solve(sudoku) {
 
 }
 
+function clear(){
+  document.activeElement.value = "";
+}
 function fillBoard() {
   for (var i = 1; i <= 81; i++) {
     if (document.getElementById('c' + i).disabled == false) {
@@ -246,6 +250,17 @@ function fillBoard() {
       }
     }
   }
+disableButtons();
+}
+
+function disableButtons(){
+  document.getElementById('btn2').disabled=true;
+  document.getElementById('btn3').disabled=true;
+}
+
+function enableButtons(){
+  document.getElementById('btn2').disabled=false;
+  document.getElementById('btn3').disabled=false;
 }
 
 function fillBoardwithClues() {

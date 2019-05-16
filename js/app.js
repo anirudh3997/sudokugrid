@@ -8,7 +8,7 @@ function handleKeyDown(evt) {
       break;
 
     case 'SoftRight':
-       document.activeElement.value = "";
+       document.getElementById('btn3').click();
       break;
 
     case 'Enter':
