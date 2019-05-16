@@ -1,7 +1,10 @@
 var currentIndex = 0;
 var currentRow = 0;
 var solved = false;
+var grey="#e0e0e0";
+var peach = "#ffe0b2"
 
+// Handles the KeyDown Events
 function handleKeyDown(evt) {
   switch (evt.key) {
     case 'SoftLeft':
@@ -87,6 +90,8 @@ function handleKeyDown(evt) {
       break;
   }
 };
+
+//This function helps tp navigate to left and right
 function navside (move) {
   var rows=document.querySelectorAll('.vert');
   var targetRow= rows[currentRow];
@@ -94,32 +99,31 @@ function navside (move) {
   var item = targetRow.querySelectorAll('.item');
   var targetElement = item[next];
   var previousElement = item[currentIndex];
-  targetElement.style.backgroundColor="#ffe0b2";
+  targetElement.style.backgroundColor=peach;
   if(!targetElement.readOnly){
     targetElement.focus();
     if(previousElement.readOnly){
-      previousElement.style.backgroundColor="#e0e0e0";
+      previousElement.style.backgroundColor=grey;
     }
     else{
       previousElement.style.backgroundColor="transparent";
     }
   }
   else{
-    console.log("ReadOnly");
     if(previousElement.readOnly){
-      previousElement.style.backgroundColor="#e0e0e0";
-      console.log("Grey");
+      previousElement.style.backgroundColor=grey;
     }
     else{
-      console.log("Transparent ")
       previousElement.style.backgroundColor= "transparent";
-
-    }  }
+        }
+    }
 
 
   previousElement.blur();
   currentIndex = next;
 }
+
+// This function helps to move vertically up and down
 function navvert (move) {
   var nextRow= move+currentRow;
   var rows = document.querySelectorAll('.vert');
@@ -129,30 +133,26 @@ function navvert (move) {
   var targetRow = rows[nextRow];
   var items = targetRow.querySelectorAll('.item');
   var targetElement = items[currentIndex];
-  targetElement.style.backgroundColor="#ffe0b2";
+  targetElement.style.backgroundColor=peach;
   if(!targetElement.readOnly){
   targetElement.focus();
   if(previousElement.readOnly){
-    previousElement.style.backgroundColor="#e0e0e0";
+    previousElement.style.backgroundColor=grey;
   }
   else{
   previousElement.style.backgroundColor="transparent";
   }
 }
 else{
-  console.log("ReadOnly");
   if(previousElement.readOnly){
-    previousElement.style.backgroundColor="#e0e0e0";
-    console.log("Grey");
+    previousElement.style.backgroundColor=grey;
   }
   else{
-    console.log("Transparent ")
     previousElement.style.backgroundColor= "transparent";
-
   }
 }
-
 previousElement.blur();
   currentRow=nextRow;
 }
+
 document.activeElement.addEventListener('keydown', handleKeyDown);
