@@ -1,6 +1,7 @@
 {
-  "name": "grid",
-  "description": "A Hello World app",
+  "version": "1.0.0",
+  "name": "Sudoku",
+  "description": "A simple Sudoku app",
   "launch_path": "/index.html",
   "icons": {
     "16": "/icons/icon16x16.png",
@@ -9,7 +10,8 @@
     "128": "/icons/icon128x128.png"
   },
   "developer": {
-    "name": "Your name",
-    "url": "http://example.com"
-  }
+    "name": "NINELEAPS",
+    "url": "http://www.nineleaps.com"
+  },
+  "default_locale": "en-US"
 }
