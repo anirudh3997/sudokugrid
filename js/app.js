@@ -78,8 +78,26 @@ function navside (move) {
   targetElement.style.backgroundColor="#ffe0b2";
   if(!targetElement.readOnly){
     targetElement.focus();
+    if(previousElement.readOnly){
+      previousElement.style.backgroundColor="#e0e0e0";
+    }
+    else{
+      previousElement.style.backgroundColor="transparent";
+    }
   }
-  previousElement.style.backgroundColor="transparent";
+  else{
+    console.log("ReadOnly");
+    if(previousElement.readOnly){
+      previousElement.style.backgroundColor="#e0e0e0";
+      console.log("Grey");
+    }
+    else{
+      console.log("Transparent ")
+      previousElement.style.backgroundColor= "transparent";
+
+    }  }
+
+
   previousElement.blur();
   currentIndex = next;
 }
@@ -95,8 +113,26 @@ function navvert (move) {
   targetElement.style.backgroundColor="#ffe0b2";
   if(!targetElement.readOnly){
   targetElement.focus();
+  if(previousElement.readOnly){
+    previousElement.style.backgroundColor="#e0e0e0";
+  }
+  else{
+  previousElement.style.backgroundColor="transparent";
+  }
 }
-previousElement.style.backgroundColor="transparent";
+else{
+  console.log("ReadOnly");
+  if(previousElement.readOnly){
+    previousElement.style.backgroundColor="#e0e0e0";
+    console.log("Grey");
+  }
+  else{
+    console.log("Transparent ")
+    previousElement.style.backgroundColor= "transparent";
+
+  }
+}
+
 previousElement.blur();
   currentRow=nextRow;
 }

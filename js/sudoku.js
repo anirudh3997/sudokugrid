@@ -43,8 +43,10 @@ function clearBoard() {
   for (var i = 1; i <= 81; i++) {
     console.log("cleared");
     document.getElementById('c' + i).style.backgroundColor = "white";
-    document.getElementById('c' + i).disabled = false;
+    document.getElementById('c' + i).readOnly = false;
     document.getElementById('c' + i).value = " ";
+    currentIndex = 0;
+    currentRow = 0;
   }
 }
 // given a sudoku cell, returns the column
@@ -255,6 +257,7 @@ function fillBoardwithClues() {
     document.getElementById('c' + i).value= sudokuCopy[i - 1];
     if(sudokuCopy[i-1]!=""){
       document.getElementById('c' + i).readOnly = true;
+      document.getElementById('c'+i).style.backgroundColor="#e0e0e0";
 
     }
   }

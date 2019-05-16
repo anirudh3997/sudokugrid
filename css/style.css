@@ -26,9 +26,16 @@ input:focus {
   background-color: #ffe0b2 !important;
 }
 
-input:disabled {
+/* input:readOnly{
   background-color: #e0e0e0 !important;
 }
+input:-moz-read-only {
+  background-color: #e0e0e0 !important;
+}
+
+input:read-only {
+  background-color: #e0e0e0 !important;
+} */
 
 /* input:readOnly {
   background-color: #e0e0e0 !important;
