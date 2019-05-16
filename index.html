@@ -5,16 +5,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Specifying style for the document
+       Linking html to style.css and bootstrap.min.css-->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <!-- Points to app.js and sudoku.js -->
   <script src="js/app.js"></script>
   <script src="js/sudoku.js"></script>
   <div class="container">
-
-    <table id="grid" >
+    <!-- Creating a table of 9 rows-->
+    <table id="grid">
+      <!-- 1st row.
+           Each row contain 9 cells -->
       <tr class="vert" tabIndex="1">
         <td id="cell-0"><input type="text" class="item" tabIndex="1" id="c1" name="randomname"></td>
         <td id="cell-1"><input type="text" class="item" tabIndex="2" id="c2"></td>
@@ -28,7 +33,7 @@
         <td id="cell-7"><input type="text" class="item" tabIndex="8" id="c8"></td>
         <td id="cell-8"><input type="text" class="item" tabIndex="9" id="c9"></td>
       </tr>
-
+      <!-- 2nd row -->
       <tr class="vert" tabIndex="2">
         <td id="cell-9"><input type="text" class="item" tabIndex="10" id="c10"></td>
         <td id="cell-10"><input type="text" class="item" tabIndex="11" id="c11"></td>
@@ -42,7 +47,7 @@
         <td id="cell-16"><input type="text" class="item" tabIndex="17" id="c17"></td>
         <td id="cell-17"><input type="text" class="item" tabIndex="18" id="c18"></td>
       </tr>
-
+      <!-- 3rd row -->
       <tr class="vert" tabIndex="3">
         <td id="cell-18"><input type="text" class="item" tabIndex="19" id="c19"></td>
         <td id="cell-19"><input type="text" class="item" tabIndex="20" id="c20"></td>
@@ -56,7 +61,7 @@
         <td id="cell-25"><input type="text" class="item" tabindex="26" id="c26"></td>
         <td id="cell-26"><input type="text" class="item" tabindex="27" id="c27"></td>
       </tr>
-
+      <!-- 4th row -->
       <tr class="vert" tabIndex="4">
         <td id="cell-27"><input type="text" class="item" tabindex="28" id="c28"></td>
         <td id="cell-28"><input type="text" class="item" tabindex="29" id="c29"></td>
@@ -70,7 +75,7 @@
         <td id="cell-34"><input type="text" class="item" tabindex="35" id="c35"></td>
         <td id="cell-35"><input type="text" class="item" tabindex="36" id="c36"></td>
       </tr>
-
+      <!-- 5th row -->
       <tr class="vert" tabIndex="5">
         <td id="cell-36"><input type="text" class="item" tabindex="37" id="c37"></td>
         <td id="cell-37"><input type="text" class="item" tabindex="38" id="c38"></td>
@@ -84,7 +89,7 @@
         <td id="cell-43"><input type="text" class="item" tabindex="44" id="c44"></td>
         <td id="cell-44"><input type="text" class="item" tabindex="45" id="c45"></td>
       </tr>
-
+      <!-- 6th row -->
       <tr class="vert" tabIndex="6">
         <td id="cell-45"><input type="text" class="item" tabindex="46" id="c46"></td>
         <td id="cell-46"><input type="text" class="item" tabindex="47" id="c47"></td>
@@ -98,7 +103,7 @@
         <td id="cell-52"><input type="text" class="item" tabindex="53" id="c53"></td>
         <td id="cell-53"><input type="text" class="item" tabindex="54" id="c54"></td>
       </tr>
-
+      <!-- 7th row -->
       <tr class="vert" tabIndex="7">
         <td id="cell-54"><input type="text" class="item" tabindex="55" id="c55"></td>
         <td id="cell-55"><input type="text" class="item" tabindex="56" id="c56"></td>
@@ -112,7 +117,7 @@
         <td id="cell-61"><input type="text" class="item" tabindex="62" id="c62"></td>
         <td id="cell-62"><input type="text" class="item" tabindex="63" id="c63"></td>
       </tr>
-
+      <!-- 8th row -->
       <tr class="vert" tabIndex="8">
         <td id="cell-63"><input type="text" class="item" tabindex="64" id="c64"></td>
         <td id="cell-64"><input type="text" class="item" tabindex="65" id="c65"></td>
@@ -126,7 +131,7 @@
         <td id="cell-70"><input type="text" class="item" tabindex="71" id="c71"></td>
         <td id="cell-71"><input type="text" class="item" tabindex="72" id="c72"></td>
       </tr>
-
+      <!-- 9th row -->
       <tr class="vert" tabIndex="9">
         <td id="cell-72"><input type="text" class="item" tabindex="73" id="c73"></td>
         <td id="cell-73"><input type="text" class="item" tabindex="74" id="c74"></td>
@@ -144,10 +149,14 @@
     </table>
 
   </div>
+  <!-- Creating 3 buttons
+      1st button to start a new game
+      2nd button to solve the table
+      3rd button to clear the cell-->
   <div class="btn-group" style="width:100%">
-    <button id = "btn1" onclick="newGame()">New Game</button>
-    <button id = "btn2" onclick="fillBoard()">Solve</button>
-    <button id = "btn3" onclick="clear()">Clear</button>
+    <button id="btn1" onclick="newGame()">New Game</button>
+    <button id="btn2" onclick="fillBoard()">Solve</button>
+    <button id="btn3" onclick="clear()">Clear</button>
   </div>
 </body>
 
