@@ -1,69 +1,88 @@
 var currentIndex = 0;
 var currentRow = 0;
+var solved = false;
 
 function handleKeyDown(evt) {
   switch (evt.key) {
     case 'SoftLeft':
       document.getElementById('btn1').click();
+      solved=false;
       break;
 
     case 'SoftRight':
+    if(!solved)
        document.getElementById('btn3').click();
       break;
 
     case 'Enter':
+    if(!solved){
       document.getElementById("btn2").click();
+      solved=true;
+    }
       break;
 
     case 'ArrowUp':
+    if(!solved)
       navvert(-1);
       break;
 
     case 'ArrowDown':
+    if(!solved)
       navvert(1);
       break;
 
     case 'ArrowRight':
+    if(!solved)
       navside(1);
       break;
 
     case 'ArrowLeft':
+    if(!solved)
       navside(-1);
       break;
 
     case '1':
+    if(!solved)
       document.activeElement.value = "1";
       break;
 
     case '2':
+    if(!solved)
       document.activeElement.value = "2";
       break;
 
     case '3':
+    if(!solved)
       document.activeElement.value = "3";
       break;
 
     case '4':
+    if(!solved)
       document.activeElement.value = "4";
       break;
 
     case '5':
+    if(!solved)
       document.activeElement.value = "5";
       break;
 
     case '6':
+    if(!solved)
       document.activeElement.value = "6";
       break;
 
     case '7':
+    if(!solved)
       document.activeElement.value = "7";
       break;
 
     case '8':
+    if(!solved)
       document.activeElement.value = "8";
       break;
 
     case '9':
+    if(!solved)
       document.activeElement.value = "9";
       break;
   }
