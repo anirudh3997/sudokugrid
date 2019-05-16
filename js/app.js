@@ -14,7 +14,7 @@ function handleKeyDown(evt) {
 
     case 'SoftRight':
       if (!solved)
-        document.getElementById('btn3').click();
+        document.activeElement.value = "";
       break;
 
     case 'Enter':

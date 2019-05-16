@@ -227,11 +227,6 @@ function solve(sudoku) {
   }
 }
 
-//This function clears the element in the cell
-function clear() {
-  document.activeElement.value = "";
-}
-
 //This function fills the board with the solution when called
 function fillBoard() {
   for (var i = 1; i <= 81; i++) {
