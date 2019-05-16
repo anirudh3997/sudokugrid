@@ -20,6 +20,7 @@ function handleKeyDown(evt) {
     case 'Enter':
       if (!solved) {
         document.getElementById("btn2").click();
+        document.activeElement.blur();
         solved = true;
       }
       break;
