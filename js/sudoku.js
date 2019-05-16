@@ -1,8 +1,7 @@
 var clues, sudoku, randomindex, sudokuCopy, random;
 
+//This function is called on loading of the app and creates a new game
 window.onload = function() {
-  console.log("New Game Called");
-  // document.getElementById("c1").backgroundColor="#ffe0b2";
   newGame();
 };
 
@@ -15,30 +14,26 @@ function generate() {
   sudokuCopy = Array.from(sudoku);
   random = shuffle(randomindex);
 }
+
 //This function shuffles an array to simulate random number generation without repetition
 function shuffle(o) {
   for (var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
   return o;
 };
 
-// given a sudoku cell, returns the row
-function returnRow(cell) {
-  return Math.floor(cell / 9);
-}
 //This function generates a new game board with random new numbers
 function newGame() {
-  enableButtons();
   clearBoard();
   generate();
   console.log(sudoku);
   fillBoardwithClues();
-  var firstElement=document.getElementById("c1");
-  firstElement.style.backgroundColor="#ffe0b2";
-  if(!firstElement.readOnly){
-  firstElement.focus();
+  var firstElement = document.getElementById("c1");
+  firstElement.style.backgroundColor = "#ffe0b2";
+  if (!firstElement.readOnly) {
+    firstElement.focus();
+  }
 }
 
-}
 //This function when called clears the board
 function clearBoard() {
   for (var i = 1; i <= 81; i++) {
@@ -50,6 +45,12 @@ function clearBoard() {
     currentRow = 0;
   }
 }
+
+// given a sudoku cell, returns the row
+function returnRow(cell) {
+  return Math.floor(cell / 9);
+}
+
 // given a sudoku cell, returns the column
 function returnCol(cell) {
   return cell % 9;
@@ -202,7 +203,6 @@ function nextRandom(possible) {
 
 // given a sudoku, solves it
 function solve(sudoku) {
-  console.log("called");
   var saved = new Array();
   var savedSudoku = new Array();
   var i = 0;
@@ -225,14 +225,14 @@ function solve(sudoku) {
     }
     sudoku[whatToTry] = attempt;
   }
-
-  // showSudoku(sudoku);
-
 }
 
-function clear(){
+//This function clears the element in the cell
+function clear() {
   document.activeElement.value = "";
 }
+
+//This function fills the board with the solution when called
 function fillBoard() {
   for (var i = 1; i <= 81; i++) {
     if (document.getElementById('c' + i).disabled == false) {
@@ -240,55 +240,28 @@ function fillBoard() {
       if (document.getElementById('c' + i).value == "") {
         document.getElementById('c' + i).style.backgroundColor = "#dce775";
         document.getElementById('c' + i).value = sudoku[i - 1];
-      }
-      else if (document.getElementById('c' + i).value != sudoku[i - 1]) {
+      } else if (document.getElementById('c' + i).value != sudoku[i - 1]) {
         document.getElementById('c' + i).style.backgroundColor = "#e57373";
         document.getElementById('c' + i).value = sudoku[i - 1];
-      }
-      else {
+      } else {
         document.getElementById('c' + i).style.backgroundColor = "#76ff03";
       }
     }
   }
-disableButtons();
 }
 
-function disableButtons(){
-  document.getElementById('btn2').disabled=true;
-  document.getElementById('btn3').disabled=true;
-}
-
-function enableButtons(){
-  document.getElementById('btn2').disabled=false;
-  document.getElementById('btn3').disabled=false;
-}
-
+//This function fills the board with blank spaces for the user to fill
 function fillBoardwithClues() {
   console.log("called fill");
   for (var i = 0; i < clues; i++) {
     sudokuCopy[random[i]] = "";
   }
   for (var i = 1; i <= 81; i++) {
-    document.getElementById('c' + i).value= sudokuCopy[i - 1];
-    if(sudokuCopy[i-1]!=""){
+    document.getElementById('c' + i).value = sudokuCopy[i - 1];
+    if (sudokuCopy[i - 1] != "") {
       document.getElementById('c' + i).readOnly = true;
-      document.getElementById('c'+i).style.backgroundColor="#e0e0e0";
+      document.getElementById('c' + i).style.backgroundColor = "#e0e0e0";
 
     }
   }
-}
-
-function showSudoku(sudoku) {
-  var sudokuText = "<table border='1'>";
-  for (var i = 0; i <= 8; i++) {
-    sudokuText += "<tr>";
-    for (var j = 0; j <= 8; j++) {
-      sudokuText += "<td>";
-      sudokuText += sudoku[i * 9 + j];
-      sudokuText += "</td>";
-    }
-    sudokuText += "</tr>";
-  }
-  sudokuText += "</table>";
-  document.write(sudokuText);
 }
