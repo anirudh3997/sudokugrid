@@ -10,7 +10,7 @@ function handleKeyDown(evt) {
   switch (evt.key) {
     case 'SoftLeft':
       document.getElementById('btn1').click();
-      console.log("loading");
+      solved = false;
       break;
 
     case 'SoftRight':
