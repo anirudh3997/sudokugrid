@@ -1,8 +1,8 @@
 var currentIndex = 0;
 var currentRow = 0;
 var solved = false;
-var grey = "#e0e0e0";
-var peach = "#ffe0b2"
+var grey = "#545454";
+var peach = "#D3AB6F"
 
 // Handles the KeyDown Events
 function handleKeyDown(evt) {
@@ -106,13 +106,13 @@ function navside(move) {
     if (previousElement.readOnly) {
       previousElement.style.backgroundColor = grey;
     } else {
-      previousElement.style.backgroundColor = "transparent";
+      previousElement.style.backgroundColor = "#AA9F9F";
     }
   } else {
     if (previousElement.readOnly) {
       previousElement.style.backgroundColor = grey;
     } else {
-      previousElement.style.backgroundColor = "transparent";
+      previousElement.style.backgroundColor = "#AA9F9F";
     }
   }
 
@@ -137,13 +137,13 @@ function navvert(move) {
     if (previousElement.readOnly) {
       previousElement.style.backgroundColor = grey;
     } else {
-      previousElement.style.backgroundColor = "transparent";
+      previousElement.style.backgroundColor = "#AA9F9F";
     }
   } else {
     if (previousElement.readOnly) {
       previousElement.style.backgroundColor = grey;
     } else {
-      previousElement.style.backgroundColor = "transparent";
+      previousElement.style.backgroundColor = "#AA9F9F";
     }
   }
   previousElement.blur();

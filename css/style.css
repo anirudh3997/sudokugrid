@@ -1,7 +1,7 @@
 html, body {
   margin-top: 20px;
   margin-left: -5px;
-  background-color: #FAFAFA
+  background-color: #000;
 }
 
 td {
@@ -12,18 +12,18 @@ td {
 
 input {
   color:transparent;
-  text-shadow: 0 0 0 #000000;
+  text-shadow: 0 0 0 #FFFFFF;
   border: 0;
   text-align: center;
   width: 24px;
   height: 24px;
   font-size: 12px;
-  background-color: #FFFFFF;
+  background-color: #AA9F9F;
 
 }
 
 input:focus {
-  background-color: #ffe0b2 !important;
+  background-color: #D3AB6F !important;
 }
 
 .btn-group button {
@@ -41,23 +41,24 @@ input:focus {
 
 #btn1 {
   width:27%;
-  background-color:#ffca28;
-  border: 1px solid yellow;
+  background-color:#BCA744;
+  border: 1px solid #BCA744;
 }
 
 #btn2 {
   width:20%;
   background-color:#8bc34a;
-  border: 1px solid green;
+  border: 1px solid #8bc34a;
 }
 
 #btn3 {
   width:20%;
-  background-color:#bf360c;
-  border: 1px solid red;
+  background-color:#B61E1E;
+  border: 1px solid #B61E1E;
 }
 
 #cell-0, #cell-1, #cell-2 {
+  /* background-color: #000000 !important; */
   border-top: 1px solid #000000;
 }
 
@@ -81,7 +82,7 @@ input:focus {
   overflow: hidden;
 }
 
-table { border-collapse :separate;}
+table { border-collapse :separate; background-color: #000;}
 
 td {
     border: solid 1px #ccc;

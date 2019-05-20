@@ -2,6 +2,8 @@ var clues, sudoku, randomindex, sudokuCopy, random;
 
 //This function is called on loading of the app and creates a new game
 window.onload = function() {
+  var someVarName = "value";
+  localStorage.setItem("someVarKey", someVarName);
   newGame();
 };
 
@@ -25,10 +27,14 @@ function shuffle(o) {
 function newGame() {
   clearBoard();
   generate();
-  console.log(sudoku);
+  console.log("Sudoku:"+sudoku);
+  var someVarName1 = localStorage.getItem("someVarKey");
+  if (sudoku[0] == 0) {
+    newGame();
+  }
   fillBoardwithClues();
   var firstElement = document.getElementById("c1");
-  firstElement.style.backgroundColor = "#ffe0b2";
+  firstElement.style.backgroundColor = "#D3AB6F";
   if (!firstElement.readOnly) {
     firstElement.focus();
   }
@@ -233,13 +239,13 @@ function fillBoard() {
     if (document.getElementById('c' + i).disabled == false) {
       console.log("called fillBoard");
       if (document.getElementById('c' + i).value == "") {
-        document.getElementById('c' + i).style.backgroundColor = "#dce775";
+        document.getElementById('c' + i).style.backgroundColor = "#bca744";
         document.getElementById('c' + i).value = sudoku[i - 1];
       } else if (document.getElementById('c' + i).value != sudoku[i - 1]) {
-        document.getElementById('c' + i).style.backgroundColor = "#e57373";
+        document.getElementById('c' + i).style.backgroundColor = "#B61E1E";
         document.getElementById('c' + i).value = sudoku[i - 1];
       } else {
-        document.getElementById('c' + i).style.backgroundColor = "#76ff03";
+        document.getElementById('c' + i).style.backgroundColor = "#545454";
       }
     }
   }
@@ -255,8 +261,10 @@ function fillBoardwithClues() {
     document.getElementById('c' + i).value = sudokuCopy[i - 1];
     if (sudokuCopy[i - 1] != "") {
       document.getElementById('c' + i).readOnly = true;
-      document.getElementById('c' + i).style.backgroundColor = "#e0e0e0";
-
+      document.getElementById('c' + i).style.backgroundColor = "#545454";
+    }
+    else {
+      document.getElementById('c' + i).style.backgroundColor = "#AA9F9F";
     }
   }
 }
