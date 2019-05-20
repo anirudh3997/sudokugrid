@@ -90,6 +90,7 @@ function handleKeyDown(evt) {
         document.activeElement.value = "9";
       break;
   }
+  checkSolve();
 };
 
 //This function helps tp navigate to left and right
