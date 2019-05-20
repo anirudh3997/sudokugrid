@@ -6,10 +6,11 @@ var peach = "#D3AB6F"
 
 // Handles the KeyDown Events
 function handleKeyDown(evt) {
+  console.log("working");
   switch (evt.key) {
     case 'SoftLeft':
       document.getElementById('btn1').click();
-      solved = false;
+      console.log("loading");
       break;
 
     case 'SoftRight':
@@ -90,7 +91,9 @@ function handleKeyDown(evt) {
         document.activeElement.value = "9";
       break;
   }
-  checkSolve();
+  if (!solved) {
+    checkSolve();
+  }
 };
 
 //This function helps tp navigate to left and right
@@ -120,6 +123,10 @@ function navside(move) {
 
   previousElement.blur();
   currentIndex = next;
+}
+
+function newGame(){
+    document.getElementById('loadgame').click();
 }
 
 // This function helps to move vertically up and down

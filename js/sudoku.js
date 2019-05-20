@@ -44,6 +44,7 @@ function newGame() {
 function clearBoard() {
   for (var i = 1; i <= 81; i++) {
     console.log("cleared");
+    document.getElementById('c' + i).style.textShadow = "0 0 0 #FFFFFF";
     document.getElementById('c' + i).style.backgroundColor = "white";
     document.getElementById('c' + i).readOnly = false;
     document.getElementById('c' + i).value = " ";
@@ -287,6 +288,7 @@ function fillBoardwithClues() {
     }
     else {
       document.getElementById('c' + i).style.backgroundColor = "#AA9F9F";
+      document.getElementById('c' + i).style.textShadow = "0 0 0 #000000";
     }
   }
 }

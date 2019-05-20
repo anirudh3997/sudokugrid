@@ -7,6 +7,27 @@ overflow: hidden;
 h1{
 color: white;
 }
+
+.btn-group button {
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  font-size: 10px;
+  margin-right: 5px;
+  margin-left: 8px;
+  margin-top: 270px;
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+#btn1 {
+  width:29%;
+  background-color:#BCA744;
+  border: 1px solid #BCA744;
+}
+
 .content {
 position: absolute;
 left: 20%;
