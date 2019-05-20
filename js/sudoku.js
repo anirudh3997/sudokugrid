@@ -134,13 +134,35 @@ function isCorrectBlock(block, sudoku) {
 
 // given a sudoku, returns true if the sudoku is solved
 function isSolvedSudoku(sudoku) {
-  console.log("is");
   for (var i = 0; i <= 8; i++) {
     if (!isCorrectBlock(i, sudoku) || !isCorrectRow(i, sudoku) || !isCorrectCol(i, sudoku)) {
-      return false;
+      console.log("false");
+	 return false;
     }
   }
+  console.log(" issolved true");
   return true;
+}
+
+function loadSuccess() {
+	document.getElementById("win").click();
+}
+
+var sudokuCurrent = [];
+function checkSolve(){
+  console.log("called check solve");
+  for (var i = 1; i <= 81; i++) {
+    var val = document.getElementById('c'+i).value
+    if(val != null) {
+      sudokuCurrent[i-1]=val;
+    }
+    else {
+      sudokuCurrent[i-1]=0;
+    }
+  }
+  if (isSolvedSudoku(sudokuCurrent)) {
+	  loadSuccess();
+  }
 }
 
 // given a cell and a sudoku, returns an array with all possible values we can write in the cell
