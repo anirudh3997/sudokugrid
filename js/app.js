@@ -6,7 +6,6 @@ var peach = "#D3AB6F"
 
 // Handles the KeyDown Events
 function handleKeyDown(evt) {
-  console.log("working");
   switch (evt.key) {
     case 'SoftLeft':
       document.getElementById('btn1').click();
@@ -22,7 +21,7 @@ function handleKeyDown(evt) {
       if (!solved) {
         document.getElementById("btn2").click();
         document.activeElement.blur();
-        solved = true;
+        solved = false;
       }
       break;
 
