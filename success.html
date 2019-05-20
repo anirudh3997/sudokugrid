@@ -6,17 +6,19 @@
 	<link rel="stylesheet" href="css/success.css">
 </head>
 
-<body>
+<body onload="timecall()">
 	<script src="js/app.js"></script>
+	<script src="js/timer.js"></script>
 	<div class="pyro">
 		<h1 class="content"> You Win </h1>
 		<div class="before"></div>
 		<div class="after"></div>
 	</div>
 	<div class="btn-group" style="width:100%">
-       <button id="btn1" onclick="newGame()">New Game</button>
-     </div>
-		<a href="index.html" id="loadgame"></a>
+		<button id="btn1" onclick="newGame()">New Game</button>
+	</div>
+	<p id="successId" style="color: white;">asdnakj</p>
+	<a href="index.html" id="loadgame"></a>
 </body>
 
 </html>
