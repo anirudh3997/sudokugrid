@@ -27,7 +27,6 @@ function shuffle(o) {
 function newGame() {
           clearBoard();
           generate();
-          console.log("Sudoku:" + sudoku);
           var someVarName1 = localStorage.getItem("someVarKey");
           if (sudoku[0] == 0) {
                     newGame();
@@ -46,7 +45,6 @@ function newGame() {
 //This function when called clears the board
 function clearBoard() {
           for (var i = 1; i <= 81; i++) {
-                    console.log("cleared");
                     document.getElementById('c' + i).style.textShadow = "0 0 0 #FFFFFF";
                     document.getElementById('c' + i).style.backgroundColor = "white";
                     document.getElementById('c' + i).readOnly = false;
@@ -146,11 +144,9 @@ function isCorrectBlock(block, sudoku) {
 function isSolvedSudoku(sudoku) {
           for (var i = 0; i <= 8; i++) {
                     if (!isCorrectBlock(i, sudoku) || !isCorrectRow(i, sudoku) || !isCorrectCol(i, sudoku)) {
-                              console.log("false");
                               return false;
                     }
           }
-          console.log(" issolved true");
           return true;
 }
 
@@ -163,7 +159,6 @@ function loadSuccess() {
 var sudokuCurrent = [];
 
 function checkSolve() {
-          console.log("called check solve");
           for (var i = 1; i <= 81; i++) {
                     var val = document.getElementById('c' + i).value
                     if (val != null) {
@@ -265,7 +260,6 @@ function solve(sudoku) {
 function fillBoard() {
           for (var i = 1; i <= 81; i++) {
                     if (document.getElementById('c' + i).disabled == false) {
-                              console.log("called fillBoard");
                               if (document.getElementById('c' + i).value == "") {
                                         document.getElementById('c' + i).style.backgroundColor = "#bca744";
                                         document.getElementById('c' + i).value = sudoku[i - 1];
@@ -281,7 +275,6 @@ function fillBoard() {
 
 //This function fills the board with blank spaces for the user to fill
 function fillBoardwithClues() {
-          console.log("called fill");
           for (var i = 0; i < clues; i++) {
                     sudokuCopy[random[i]] = "";
           }
