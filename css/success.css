@@ -7,6 +7,9 @@ overflow: hidden;
 h1{
 color: white;
 }
+#bestId{
+	margin-top: 130px;
+}
 
 .btn-group button {
   border: 1px solid green; /* Green border */

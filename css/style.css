@@ -1,233 +1,249 @@
 html, body {
-  margin-top: 10px;
-  margin-left: -5px;
-  background-color: #000;
+          margin-left: -5px;
+          background-color: #000;
+          margin-top: 3px;
 }
 
 td {
-  border: 1px solid #000000;
-  text-align: center;
-  vertical-align: middle;
+          border: 1px solid #000000;
+          text-align: center;
+          vertical-align: middle;
 }
 
 input {
-  color:transparent;
-  text-shadow: 0 0 0 #FFFFFF;
-  border: 0;
-  text-align: center;
-  width: 24px;
-  height: 24px;
-  font-size: 12px;
-  background-color: #AA9F9F;
+          color: transparent;
+          text-shadow: 0 0 0 #FFFFFF;
+          border: 0;
+          text-align: center;
+          width: 24px;
+          height: 24px;
+          font-size: 12px;
+          background-color: #AA9F9F;
+}
 
+p {
+          text-decoration-color: #FFFFFF;
+          text-align: center;
+          color: #FFFFFF;
+          margin: 0px;
+          padding: 0px;
 }
 
 input:focus {
-  background-color: #D3AB6F !important;
+          background-color: #D3AB6F !important;
 }
 
 .btn-group button {
-  border: 1px solid green; /* Green border */
-  color: black; /* White text */
-  font-size: 10px;
-  margin-right: 5px;
-  margin-left: 20px;
-  margin-top: 15px;
-  padding: 5px;
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
-  border-radius: 15px;
+          border: 1px solid green;
+          /* Green border */
+          color: black;
+          /* White text */
+          font-size: 10px;
+          margin-right: 5px;
+          margin-left: 20px;
+          margin-top: 10px;
+          padding: 5px;
+          cursor: pointer;
+          /* Pointer/hand icon */
+          float: left;
+          /* Float the buttons side by side */
+          border-radius: 15px;
 }
+
 .btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
+          border-right: none;
+          /* Prevent double borders */
 }
 
 #btn1 {
-  width:27%;
-  background-color:#BCA744;
-  border: 1px solid #BCA744;
+          width: 27%;
+          background-color: #BCA744;
+          border: 1px solid #BCA744;
 }
 
 #btn2 {
-  width:20%;
-  background-color:#8bc34a;
-  border: 1px solid #8bc34a;
+          width: 20%;
+          background-color: #8bc34a;
+          border: 1px solid #8bc34a;
 }
 
 #btn3 {
-  width:20%;
-  background-color:#9e9e9e;
-  border: 1px solid #9e9e9e;
+          width: 20%;
+          background-color: #9e9e9e;
+          border: 1px solid #9e9e9e;
 }
 
 #cell-0, #cell-1, #cell-2 {
-  /* background-color: #000000 !important; */
-  border-top: 1px solid #000000;
+          /* background-color: #000000 !important; */
+          border-top: 1px solid #000000;
 }
 
-#cell-0, #cell-3, #cell-6, #cell-27, #cell-30, #cell-33, #cell-54, #cell-57, #cell-60{
-  border-top-left-radius: 15px;
-  overflow: hidden;
+#cell-0, #cell-3, #cell-6, #cell-27, #cell-30, #cell-33, #cell-54, #cell-57, #cell-60 {
+          border-top-left-radius: 15px;
+          overflow: hidden;
 }
 
-#cell-2, #cell-5, #cell-8, #cell-29, #cell-32, #cell-35, #cell-56, #cell-59, #cell-62{
-  border-top-right-radius: 15px;
-  overflow: hidden;
+#cell-2, #cell-5, #cell-8, #cell-29, #cell-32, #cell-35, #cell-56, #cell-59, #cell-62 {
+          border-top-right-radius: 15px;
+          overflow: hidden;
 }
 
-#cell-18, #cell-21, #cell-24, #cell-45, #cell-48, #cell-51, #cell-72, #cell-75, #cell-78{
-  border-bottom-left-radius: 15px;
-  overflow: hidden;
+#cell-18, #cell-21, #cell-24, #cell-45, #cell-48, #cell-51, #cell-72, #cell-75, #cell-78 {
+          border-bottom-left-radius: 15px;
+          overflow: hidden;
 }
 
-#cell-20, #cell-23, #cell-26, #cell-47, #cell-50, #cell-53, #cell-74, #cell-77, #cell-80{
-  border-bottom-right-radius: 15px;
-  overflow: hidden;
+#cell-20, #cell-23, #cell-26, #cell-47, #cell-50, #cell-53, #cell-74, #cell-77, #cell-80 {
+          border-bottom-right-radius: 15px;
+          overflow: hidden;
 }
 
-table { border-collapse :separate; background-color: #000;}
+table {
+          border-collapse: separate;
+          background-color: #000;
+}
 
 td {
-    border: solid 1px #ccc;
-    border-style: none solid solid none;
+          border: solid 1px #ccc;
+          border-style: none solid solid none;
 }
 
 #cell-2, #cell-11, #cell-20 {
-  border-right: 1px solid #000000;
+          border-right: 1px solid #000000;
 }
 
 #cell-18, #cell-19, #cell-20 {
-  border-bottom: 1px solid #000000;
+          border-bottom: 1px solid #000000;
 }
 
 #cell-0, #cell-9, #cell-18 {
-  border-left: 1px solid #000000;
+          border-left: 1px solid #000000;
 }
 
 #cell-3, #cell-4, #cell-5 {
-  border-top: 1px solid #000000;
+          border-top: 1px solid #000000;
 }
 
 #cell-5, #cell-14, #cell-23 {
-  border-right: 1px solid #000000;
+          border-right: 1px solid #000000;
 }
 
 #cell-21, #cell-22, #cell-23 {
-  border-bottom: 1px solid #000000;
+          border-bottom: 1px solid #000000;
 }
 
 #cell-3, #cell-12, #cell-21 {
-  border-left: 1px solid #000000;
+          border-left: 1px solid #000000;
 }
 
 #cell-6, #cell-7, #cell-8 {
-  border-top: 1px solid #000000;
+          border-top: 1px solid #000000;
 }
 
 #cell-8, #cell-17, #cell-26 {
-  border-right: 1px solid #000000;
+          border-right: 1px solid #000000;
 }
 
 #cell-24, #cell-25, #cell-26 {
-  border-bottom: 1px solid #000000;
+          border-bottom: 1px solid #000000;
 }
 
 #cell-6, #cell-15, #cell-24 {
-  border-left: 1px solid #000000;
+          border-left: 1px solid #000000;
 }
 
 #cell-27, #cell-28, #cell-29 {
-  border-top: 1px solid #000000;
+          border-top: 1px solid #000000;
 }
 
 #cell-29, #cell-38, #cell-47 {
-  border-right: 1px solid #000000;
+          border-right: 1px solid #000000;
 }
 
 #cell-45, #cell-46, #cell-47 {
-  border-bottom: 1px solid #000000;
+          border-bottom: 1px solid #000000;
 }
 
 #cell-27, #cell-36, #cell-45 {
-  border-left: 1px solid #000000;
+          border-left: 1px solid #000000;
 }
 
 #cell-30, #cell-31, #cell-32 {
-  border-top: 1px solid #000000;
+          border-top: 1px solid #000000;
 }
 
 #cell-32, #cell-41, #cell-50 {
-  border-right: 1px solid #000000;
+          border-right: 1px solid #000000;
 }
 
 #cell-48, #cell-49, #cell-50 {
-  border-bottom: 1px solid #000000;
+          border-bottom: 1px solid #000000;
 }
 
 #cell-30, #cell-39, #cell-48 {
-  border-left: 1px solid #000000;
+          border-left: 1px solid #000000;
 }
 
 #cell-33, #cell-34, #cell-35 {
-  border-top: 1px solid #000000;
+          border-top: 1px solid #000000;
 }
 
 #cell-35, #cell-44, #cell-53 {
-  border-right: 1px solid #000000;
+          border-right: 1px solid #000000;
 }
 
 #cell-51, #cell-52, #cell-53 {
-  border-bottom: 1px solid #000000;
+          border-bottom: 1px solid #000000;
 }
 
 #cell-33, #cell-42, #cell-51 {
-  border-left: 1px solid #000000;
+          border-left: 1px solid #000000;
 }
 
 #cell-54, #cell-55, #cell-56 {
-  border-top: 1px solid #000000;
+          border-top: 1px solid #000000;
 }
 
 #cell-56, #cell-65, #cell-74 {
-  border-right: 1px solid #000000;
+          border-right: 1px solid #000000;
 }
 
 #cell-72, #cell-73, #cell-74 {
-  border-bottom: 1px solid #000000;
+          border-bottom: 1px solid #000000;
 }
 
 #cell-54, #cell-63, #cell-72 {
-  border-left: 1px solid #000000;
+          border-left: 1px solid #000000;
 }
 
 #cell-57, #cell-58, #cell-59 {
-  border-top: 1px solid #000000;
+          border-top: 1px solid #000000;
 }
 
 #cell-59, #cell-68, #cell-77 {
-  border-right: 1px solid #000000;
+          border-right: 1px solid #000000;
 }
 
 #cell-75, #cell-76, #cell-77 {
-  border-bottom: 1px solid #000000;
+          border-bottom: 1px solid #000000;
 }
 
 #cell-57, #cell-66, #cell-75 {
-  border-left: 1px solid #000000;
+          border-left: 1px solid #000000;
 }
 
 #cell-60, #cell-61, #cell-62 {
-  border-top: 1px solid #000000;
+          border-top: 1px solid #000000;
 }
 
 #cell-62, #cell-71, #cell-80 {
-  border-right: 1px solid #000000;
+          border-right: 1px solid #000000;
 }
 
 #cell-78, #cell-79, #cell-80 {
-  border-bottom: 1px solid #000000;
+          border-bottom: 1px solid #000000;
 }
 
 #cell-60, #cell-69, #cell-78 {
-  border-left: 1px solid #000000;
+          border-left: 1px solid #000000;
 }
