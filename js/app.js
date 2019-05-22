@@ -21,7 +21,7 @@ function handleKeyDown(evt) {
       if (!solved) {
         document.getElementById("btn2").click();
         document.activeElement.blur();
-        solved = false;
+        solved = true;
       }
       break;
 

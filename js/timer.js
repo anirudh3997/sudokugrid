@@ -19,8 +19,8 @@ function timecall() {
      minutes = queries[1];
      seconds = queries[0];
      currentTime = convertTimeToSeconds(hours, minutes, seconds);
-     document.getElementById("successId").innerHTML = "Time Taken to solve" +
-          hours + ": " + minutes + ": " + seconds;
+     document.getElementById("successId").innerHTML =
+     hours + ": " + minutes + ": " + seconds;
      setBestTime(currentTime);
 
 }
@@ -40,7 +40,7 @@ function setBestTime(currentTime) {
      localStorage['best'] = best;
      localStorage['bestTime'] = bestTime;
      convertSecondsToTime(bestTime);
-     document.getElementById("bestId").innerHTML = "Best: " + hours + ": " + minutes + ": " + seconds;
+     document.getElementById("bestId").innerHTML = hours + ": " + minutes + ": " + seconds;
 
 }
 
